@@ -23,7 +23,8 @@ class Walker {
 
   render() {
     stroke(0);
-    point(this.x,this.y);
+    // point(this.x,this.y);
+    circle(this.x,this.y,5);
   }
 
   step() {

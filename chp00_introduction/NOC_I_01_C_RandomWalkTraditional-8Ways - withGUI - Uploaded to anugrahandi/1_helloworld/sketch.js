@@ -12,8 +12,8 @@ var Size = 8;
 var arrWalker = [];
 
 function setup() {
-  var canvas = createCanvas(640,360);
-  // canvas = parent('body');
+  var canvas = createCanvas(640,480);
+  canvas.parent('holder');
   walker = new Walker();
   walker_2 = new Walker();
   walker_3 = new Walker();
@@ -21,9 +21,11 @@ function setup() {
   // background(myColor);
 
   //GUI create
+  // add comment here using winSCP direct edit.
   sliderRange(0,90,1);
   gui = createGui('try GUI');
   gui.addGlobals('myColor','Size');
+  gui.setPosition(10,490);
 }
 
 function draw() {

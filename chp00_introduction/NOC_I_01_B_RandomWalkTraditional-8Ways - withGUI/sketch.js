@@ -9,16 +9,18 @@ var myColor = '#befc03';
 var gui;
 var Size = 8;
 
-var arrWalker = [];
+var arr = [];
 
 function setup() {
-  var canvas = createCanvas(640,360);
-  // canvas = parent('body');
-  walker = new Walker();
-  walker_2 = new Walker();
-  walker_3 = new Walker();
-  // background(127);
-  // background(myColor);
+  canvas = createCanvas(640,360);
+  
+  // walker = new Walker();
+  // walker_2 = new Walker();
+  // walker_3 = new Walker();
+
+  for (var i = 0; i <= 2000; i++) {
+    arr[i] = new Walker();
+  }
 
   //GUI create
   sliderRange(0,90,1);
@@ -28,12 +30,17 @@ function setup() {
 
 function draw() {
   background(myColor);
-  walker.step();
-  walker.render();
-  walker_2.step();
-  walker_2.render();
-  walker_3.step();
-  walker_3.render();
+  // walker.step();
+  // walker.render();
+  // walker_2.step();
+  // walker_2.render();
+  // walker_3.step();
+  // walker_3.render();
+
+  for (var i = 0; i <= 2000; i++) {
+    arr[i].step();
+    arr[i].render();
+  }
 }
 
 class Walker {

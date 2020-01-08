@@ -13,6 +13,7 @@ function setup() {
   for (let i = 0; i < total; i++) {
     randomCounts[i] = 0;
   }
+  frameRate(30);
 }
 
 function draw() {
@@ -22,14 +23,16 @@ function draw() {
 
   // Draw a rectangle to graph results
   stroke(0);
-  strokeWeight(2);
+  strokeWeight(1);
   fill(255);
 
-  let w = width/randomCounts.length;
+  // let w = width/randomCounts.length;
+  let w = width/total; // sama saja ternyata dengan di atas...
 
   for (let x = 0; x < randomCounts.length; x++) {
     rect(x*w,height-randomCounts[x],w-1,randomCounts[x]);
   }
 
   text(frameCount,10,20);
+  text(index,10,30);
 }

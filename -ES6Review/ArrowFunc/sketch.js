@@ -1,3 +1,6 @@
+// JavaScript Arrow Functions
+// Based on this video : https://www.youtube.com/watch?v=mrYMzpbFz18&list=PLRqwX-V7Uu6YgpA3Oht-7B4NBQwFVe3pr&index=3
+
 function setup(){
   noCanvas();
   console.log(this);

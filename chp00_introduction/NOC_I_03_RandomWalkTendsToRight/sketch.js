@@ -13,6 +13,10 @@ function setup() {
 function draw() {
   walker.step();
   walker.render();
+  noStroke();
+  rect(10, 10, 50, 20)
+  text(frameCount,10,20);
+  text(walker.step.r,10,30);
 }
 
 class Walker{

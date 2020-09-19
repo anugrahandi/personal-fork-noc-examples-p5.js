@@ -7,7 +7,7 @@ let walker;
 // This is additional var for GUI
 var myColor = '#befc03';
 var gui;
-var Size = 8;
+var Size = 12;
 
 var arrWalker = [];
 
@@ -26,6 +26,7 @@ function setup() {
   gui = createGui('try GUI');
   gui.addGlobals('myColor','Size');
   gui.setPosition(10,490);
+  frameRate(30);
 }
 
 function draw() {
@@ -47,11 +48,16 @@ class Walker {
   render() {
     stroke(0);
     // point(this.x,this.y);
+    fill(255);
     circle(this.x,this.y,Size);
+    fill(0);
+    textSize(10);
+    text(this.choice,this.x,this.y+20);
   }
 
   step() {
     var choice = floor(random(8));
+    this.choice = choice;
     if (choice === 0) {
       this.x++;
     } else if (choice === 1) {

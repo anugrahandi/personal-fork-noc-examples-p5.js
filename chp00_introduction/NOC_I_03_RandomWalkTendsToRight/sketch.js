@@ -8,6 +8,7 @@ function setup() {
   createCanvas(640,360);
   walker = new Walker();
   background(127);
+  frameRate(15);
 }
 
 function draw() {
@@ -16,7 +17,7 @@ function draw() {
   noStroke();
   rect(10, 10, 50, 20)
   text(frameCount,10,20);
-  text(walker.step.r,10,30);
+  text(round(walker.r,3),10,30);
 }
 
 class Walker{
@@ -31,7 +32,8 @@ class Walker{
   };
 
   step(){
-    let r = random(1);
+    var r = random(1);
+    this.r = r;
       // A 40% of moving to the right!
     if (r < 0.4) {
       this.x++;

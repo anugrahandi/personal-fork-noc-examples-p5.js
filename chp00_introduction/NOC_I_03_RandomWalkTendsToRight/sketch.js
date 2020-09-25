@@ -35,13 +35,13 @@ class Walker{
     var r = random(1);
     this.r = r;
       // A 40% of moving to the right!
-    if (r < 0.4) {
+    if (r < 0.4) { // 40 % ke kanan
       this.x++;
-    } else if (r < 0.6) {
+    } else if (r < 0.6) { // 20 % ke kiri
       this.x--;
-    } else if (r < 0.8) {
+    } else if (r < 0.8) { // 20 % ke kanan
       this.y++;
-    } else {
+    } else { // 20 % ke bawah
       this.y--;
     }
     this.x = constrain(this.x,0,width-1);

@@ -8,6 +8,7 @@ function setup() {
   createCanvas(640,360);
   walker = new Walker();
   background(127);
+  frameRate(15);
 }
 
 function draw() {
@@ -16,7 +17,7 @@ function draw() {
   noStroke();
   rect(10, 10, 50, 20)
   text(frameCount,10,20);
-  text(walker.step.r,10,30);
+  text(round(walker.r,3),10,30);
 }
 
 class Walker{
@@ -31,16 +32,16 @@ class Walker{
   };
 
   step(){
-    let choice = floor(random(4));
-    let r = random(1);
+    var r = random(1);
+    this.r = r;
       // A 40% of moving to the right!
-    if (r < 0.4) {
+    if (r < 0.4) { // 40 % ke kanan
       this.x++;
-    } else if (r < 0.6) {
+    } else if (r < 0.6) { // 20 % ke kiri
       this.x--;
-    } else if (r < 0.8) {
+    } else if (r < 0.8) { // 20 % ke kanan
       this.y++;
-    } else {
+    } else { // 20 % ke bawah
       this.y--;
     }
     this.x = constrain(this.x,0,width-1);

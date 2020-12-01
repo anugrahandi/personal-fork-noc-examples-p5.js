@@ -12,6 +12,7 @@ function draw() {
 
   // Get a gaussian random number w/ mean of 0 and standard deviation of 1.0
   let xloc = randomGaussian();
+  print(xloc);
 
   const sd = 60;                // Define a standard deviation
   const mean = width/2;         // Define a mean value (middle of the screen along the x-axis)
